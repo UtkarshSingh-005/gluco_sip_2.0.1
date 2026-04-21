@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | GlucoSip Smart Cap</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+    /* Body setup specific to the login page to center the container.
+      It inherits the font and variables from your linked style.css 
+    */
+    body {
+        background: var(--dark);
+        color: var(--light);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 2rem;
+        /* Adds a subtle glow behind the whole page matching your hero section */
+        background-image: radial-gradient(ellipse at center, rgba(0, 212, 170, 0.05) 0%, transparent 70%);
+    }
+
+    /* Container styled like your 'Feature Cards' */
+    .login-container {
+        background: var(--dark-light);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 24px;
+        padding: 3rem;
+        width: 100%;
+        max-width: 450px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        text-align: center;
+        transition: border-color 0.3s ease;
+    }
+
+    .login-container:hover {
+        border-color: rgba(0, 212, 170, 0.2);
+    }
+
+    /* Gradient Header matching the Hero h1 */
+    .login-container h2 {
+        font-size: 2rem;
+        font-weight: 800;
+        margin-bottom: 2rem;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .login-container label {
+        font-size: 0.9rem;
+        color: var(--gray);
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+        display: block;
+        text-align: left;
+    }
+
+    /* Input fields matching the dark, modern UI */
+    .login-container input {
+        width: 100%;
+        padding: 1rem 1.25rem;
+        margin-bottom: 1.5rem;
+        background: var(--dark);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        color: var(--light);
+        font-family: 'Inter', -apple-system, sans-serif;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        box-sizing: border-box;
+    }
+
+    /* Focus state with a subtle neon glow */
+    .login-container input:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(0, 212, 170, 0.15);
+    }
+
+    /* Button styled exactly like your .btn-primary */
+    .login-container button {
+        width: 100%;
+        background: var(--gradient);
+        color: var(--dark);
+        padding: 1rem;
+        border: none;
+        border-radius: 50px;
+        font-size: 1rem;
+        font-weight: 600;
+        font-family: 'Inter', -apple-system, sans-serif;
+        cursor: pointer;
+        margin-top: 0.5rem;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .login-container button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(0, 212, 170, 0.3);
+    }
+
+    /* Footer links matching the main site links */
+    .footer {
+        margin-top: 2rem;
+        font-size: 0.95rem;
+        color: var(--gray);
+    }
+
+    .footer a {
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s;
+    }
+
+    .footer a:hover {
+        color: var(--light);
+    }
+</style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm" action="/login" method="POST">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Login</button>
+        </form>
+        <div class="footer">
+            <p>Don't have an account? <a href="register.html" style="color: var(--primary);">Register</a></p>
+        </div>
+    </div>
+</body>
+</html>
